@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bjo6fvdehsg1t"]
+
+[ext_resource type="Script" uid="uid://ce3a6vdma7fh1" path="res://addons/jobslist/all_jobs_list.gd" id="1_g8eb1"]
+[ext_resource type="Script" uid="uid://cjjf5k4cpmf2x" path="res://addons/jobslist/job.gd" id="2_6tbif"]
+[ext_resource type="Script" uid="uid://cj7rqmc0d3lvo" path="res://addons/jobslist/local_jobs_list.gd" id="3_83u6r"]
+[ext_resource type="Script" uid="uid://b0v1fp63w2qeu" path="res://example/put_all_jobs_to_one_text.gd" id="4_254le"]
+
+[sub_resource type="Resource" id="Resource_254le"]
+script = ExtResource("2_6tbif")
+job_name = "Store"
+job_description = "Just move some boxes"
+required_energy = 4
+required_time = 4
+properties = {
+"simple": true
+}
+
+[sub_resource type="Resource" id="Resource_jsujc"]
+script = ExtResource("2_6tbif")
+job_name = "Shop"
+job_description = "Need to replace our worker for 1 day"
+required_energy = 3
+required_time = 8
+properties = null
+
+[sub_resource type="Resource" id="Resource_0wn30"]
+script = ExtResource("2_6tbif")
+job_name = "Job 3"
+job_description = "Job 3 desc."
+required_energy = 2
+required_time = 1
+properties = null
+
+[sub_resource type="Resource" id="Resource_qn1xj"]
+script = ExtResource("2_6tbif")
+job_name = "Job 4"
+job_description = "Job 4 desc."
+required_energy = 4
+required_time = 1
+properties = null
+
+[node name="ExampleScene" type="Node2D" unique_id=1830457513]
+
+[node name="AllJobsList" type="Node" parent="." unique_id=753193351]
+script = ExtResource("1_g8eb1")
+json_path = "res://example/jobs.json"
+all_jobs = Array[ExtResource("2_6tbif")]([SubResource("Resource_254le"), SubResource("Resource_jsujc"), SubResource("Resource_0wn30"), SubResource("Resource_qn1xj")])
+metadata/_custom_type_script = "uid://ce3a6vdma7fh1"
+
+[node name="LocalJobsList" type="Node" parent="." unique_id=771734234 node_paths=PackedStringArray("jobs_source")]
+script = ExtResource("3_83u6r")
+jobs_source = NodePath("../AllJobsList")
+number_of_jobs = 2
+metadata/_custom_type_script = "uid://cj7rqmc0d3lvo"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275941830]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1708699009]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/MarginContainer" unique_id=1833775861 node_paths=PackedStringArray("local_jobs")]
+layout_mode = 2
+editable = false
+script = ExtResource("4_254le")
+local_jobs = NodePath("../../../LocalJobsList")
