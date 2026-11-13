@@ -1,5 +1,6 @@
 extends TextEdit
 
+# Just local jobs.
 @export var local_jobs: LocalJobsList
 
 

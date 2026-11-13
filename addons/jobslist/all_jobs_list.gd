@@ -2,7 +2,7 @@
 extends Node
 class_name AllJobsList
 
-## All jobs list class
+## All jobs list class.
 ##
 ## It reads jobs from .json file and parse it to ready-to-use objects
 
@@ -23,10 +23,12 @@ func _ready() -> void:
 	_load_jobs_from_json()
 
 
+# Reload jobs from json.
 func refresh() -> void:
 	_load_jobs_from_json()
 
 
+# Save jobs to json.
 func save() -> void:
 	var data_to_save := []
 	for job: Job in all_jobs:
@@ -47,6 +49,7 @@ func save() -> void:
 	file.close()
 
 
+# Load jobs from json.
 func _load_jobs_from_json() -> void:
 	if json_path.is_empty():
 		push_warning("JSON path is empty")

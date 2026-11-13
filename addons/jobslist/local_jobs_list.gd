@@ -5,12 +5,13 @@ class_name LocalJobsList
 ##
 ## It generates number of jobs, just picks rundom jobs from source.
 
-## Source of all jobs
+## Source of all jobs.
 @export var jobs_source: AllJobsList
 
-## Number of chosen jobs
+## Number of chosen jobs.
 @export var number_of_jobs: int
 
+## Jobs, which are filtered and randomly chosen.
 var available_jobs: Array[Job] = []
 
 # Called when the node enters the scene tree for the first time.
