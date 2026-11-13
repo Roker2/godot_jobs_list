@@ -11,21 +11,21 @@
 	{
 		"job_description": "Need to replace our worker for 1 day",
 		"job_name": "Shop",
-		"properties": null,
+		"properties": {},
 		"required_energy": 3,
 		"required_time": 8
 	},
 	{
 		"job_description": "Job 3 desc.",
 		"job_name": "Job 3",
-		"properties": null,
+		"properties": {},
 		"required_energy": 2,
 		"required_time": 1
 	},
 	{
 		"job_description": "Job 4 desc.",
 		"job_name": "Job 4",
-		"properties": null,
+		"properties": {},
 		"required_energy": 4,
 		"required_time": 1
 	}
