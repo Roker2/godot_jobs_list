@@ -23,11 +23,6 @@ func _ready() -> void:
 	_load_jobs_from_json()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func refresh() -> void:
 	_load_jobs_from_json()
 

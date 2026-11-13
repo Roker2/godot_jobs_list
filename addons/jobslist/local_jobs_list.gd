@@ -35,11 +35,6 @@ func _ready() -> void:
 		available_jobs.append(job)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 # Filter, which can be overrided in subclass.
 func _filter(job: Job) -> bool:
 	return true
