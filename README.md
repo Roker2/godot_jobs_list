@@ -20,4 +20,6 @@ Just small helper for Godot 4, which loads jobs list from .json file.
 
 * If you need random picker from jobs list, use `LocalJobsList` node and configure it
 
-You can check example
+You can check example.
+
+Also you can do a job filter. You need to inherite the `LocalJobsList` class and override the `_filter` method.

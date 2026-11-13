@@ -46,5 +46,9 @@ static func create_from_dict(data: Dictionary) -> Job:
 	job.job_description = data.get("job_description")
 	job.required_energy = data.get("required_energy")
 	job.required_time = data.get("required_time")
-	job.properties = data.get("properties")
+	var raw_properties = data.get("properties", {})
+	if raw_properties is Dictionary:
+		job.properties = raw_properties
+	else:
+		job.properties = {}
 	return job
